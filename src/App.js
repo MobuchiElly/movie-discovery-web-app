@@ -9,9 +9,6 @@ function App() {
         <Routes>
           {/* Keep MoviesSearch component on the webpage at all times */}
           <Route path="/homepage" element={<MoviesSearch />} />
-
-          {/* Set /top-movies as the homepage
-          <Route path="" element={<Card />} /> */}
           
           {/* Define the route for movie details */}
           <Route path="/movies/:id" element={<MovieDetails />} />
