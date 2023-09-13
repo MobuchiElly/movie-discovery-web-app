@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Link, Outlet } from 'react-router-dom'; // Import Link from react-router-dom
+import { Link} from 'react-router-dom'; // Import Link from react-router-dom
+import Card from './Card';
 
 function MovieSearch() {
   const [query, setQuery] = useState('');
@@ -69,7 +70,7 @@ function MovieSearch() {
           ))}
         </div>
       </div>
-      <Outlet />
+      <Card />
     </div>
   );
 }
