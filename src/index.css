@@ -11,3 +11,37 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid with min-width of 200px */
+  gap: 20px; /* Gap between grid items */
+}
+
+.movie-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 10px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.movie-poster {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+}
+
+.movie-details {
+  margin-top: 10px;
+}
+
+.movie-title {
+  font-weight: bold;
+}
+
+.movie-release-date {
+  color: #777;
+}
