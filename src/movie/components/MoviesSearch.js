@@ -7,7 +7,7 @@ function MovieSearch() {
   const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  // console.log('hello');
+  
   useEffect(() => {
     const searchMovies = async () => {
       try {
@@ -57,20 +57,20 @@ function MovieSearch() {
         {error && <p>{error}</p>}
         <div className="search-results">
           {searchResults.map((movie) => (
-            <Link to={`/movies/${movie.id}`} key={movie.id}> {/* Link to movie details */}
+            <Link to={`/movies/${movie.id}`} key={movie.id}>
               <div className="movie-card">
                 <img
                   src={`https://image.tmdb.org/t/p/w185/${movie.poster_path}`}
-                  alt={movie.title}
+                  alt={movie.title} data-testid="movie-poster"
                 />
-                <h2>{movie.title}</h2>
-                <p>Release Date: {movie.release_date}</p>
+                <h2 data-testid="movie-title">{movie.title}</h2>
+                <p data-testid="movie-release-date">Release Date: {movie.release_date}</p>
               </div>
             </Link>
           ))}
         </div>
       </div>
-      <Card />
+      {(searchResults !== []) && <Card data-testid="movie-card"/>}
     </div>
   );
 }
