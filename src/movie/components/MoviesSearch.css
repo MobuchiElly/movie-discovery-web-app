@@ -1,0 +1,25 @@
+body{
+    background-color: rgb(39, 41, 41);
+    /* background: #141414;
+	color: #ffffff; */
+    color: whitesmoke;
+}
+
+
+.body h1{
+    text-align: center;
+}
+.body .input{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin-bottom: 15px;
+    
+}
+.body .input input {
+    width: 50%;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    text-indent: 20px;
+}

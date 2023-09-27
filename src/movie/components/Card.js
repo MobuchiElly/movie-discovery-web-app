@@ -28,26 +28,31 @@ function Card() {
   }, []);
 
   return (
-    <div className="movie-grid">
-      {loading ? (
-        <h3>Loading...</h3>
-      ) : (
-        movieList.map((movie) => (
-          <Link to={`/movies/${movie.id}`} key={movie.id}>
-            <div data-testid="movie-card" className="movie-card">
-              <img
-                className="movie-poster"
-                src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-                alt={movie.title} data-testid="movie-poster"
-              />
-              <div data-testid="movie-details" className="movie-details">
-                <div data-testid="movie-title" className="movie-title">{movie.title}</div>
-                <div data-testid="movie-release-date" className="movie-release-date">{movie.release_date}</div>
+    <div>
+      <div className='heading'>
+        <h1>Popular Movies</h1>
+      </div>
+      <div className="movie-grid">
+        {loading ? (
+          <h3>Loading...</h3>
+        ) : (
+          movieList.map((movie) => (
+            <Link to={`/movies/${movie.id}`} key={movie.id}>
+              <div data-testid="movie-card" className="movie-card">
+                <img
+                  className="movie-poster"
+                  src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                  alt={movie.title} data-testid="movie-poster"
+                />
+                <div data-testid="movie-details" className="movie-details">
+                  <div data-testid="movie-title" className="movie-title">{movie.title}</div>
+                  <div data-testid="movie-release-date" className="movie-release-date">{movie.release_date}</div>
+                </div>
               </div>
-            </div>
-          </Link>
-        ))
-      )}
+            </Link>
+          ))
+        )}
+      </div>
     </div>
   );
 }

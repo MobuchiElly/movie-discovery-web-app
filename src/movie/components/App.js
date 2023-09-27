@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import MoviesSearch from './MoviesSearch';
 import MovieDetails from './MovieDetails'; // Import your MovieDetails component
+import Footer from './Footer';
 
 function App() {
   return (<div>
@@ -15,6 +16,7 @@ function App() {
           <Route path="/movies/:id" element={<MovieDetails />} />
         </Routes>
       </Router>
+      <Footer />
   </div>
   );
 }

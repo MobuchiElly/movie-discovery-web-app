@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link} from 'react-router-dom'; // Import Link from react-router-dom
 import Card from './Card';
+import './MoviesSearch.css'
 
 function MovieSearch() {
   const [query, setQuery] = useState('');
@@ -33,29 +34,33 @@ function MovieSearch() {
         setLoading(false);
       }
     };
-
-    if (query) {
+    
+    if (query && query !== "") {
       searchMovies();
     }
+
   }, [query]);
 
   const handleInputChange = (e) => {
+    
     setQuery(e.target.value);
   };
 
   return (
-    <div>
+    <div className="body">
       <div>
-        <h1>Movie Search</h1>
-        <input
-          type="text"
-          placeholder="Search for a movie..."
-          value={query}
-          onChange={handleInputChange}
-        />
+        <h1>Movie Discovery Application</h1>
+        <div className="input">
+          <input
+            type="text"
+            placeholder="Search for a movie..."
+            value={query}
+            onChange={handleInputChange}
+          />
+        </div>
         {loading && <p>Loading...</p>}
         {error && <p>{error}</p>}
-        <div className="search-results">
+        {query && <div className="search-results movie-grid">
           {searchResults.map((movie) => (
             <Link to={`/movies/${movie.id}`} key={movie.id}>
               <div className="movie-card">
@@ -68,9 +73,9 @@ function MovieSearch() {
               </div>
             </Link>
           ))}
-        </div>
+        </div>}
       </div>
-      {(searchResults !== []) && <Card data-testid="movie-card"/>}
+      {!query && <Card data-testid="movie-card"/>}
     </div>
   );
 }
