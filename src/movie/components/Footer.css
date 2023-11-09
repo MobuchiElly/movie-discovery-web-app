@@ -12,13 +12,53 @@ footer {
     }
 
   .social-icons a {
-    padding: 3px;
     background-color: rgb(27, 25, 25);
     border-radius: 50px;
-    width:4vw;
     display: flex;
     justify-content: center;
+    align-items: center;
   }
+
+/* mobile devices  */
+  @media only screen and (max-width:575px) {
+    .social-icons a {
+      width: 8vw;
+      height: 8vw;
+      margin: 5px;
+    }
+  }
+  /* Tabs */
+  @media only screen and (min-width:575px) {
+    .social-icons a {
+      width: 7vw;
+      height: 7vw;
+      padding: 1px;
+    }
+  }
+  /* Desktop Devices */
+  @media only screen and (min-width:976px) {
+    .social-icons {
+      height: 40px;
+    }
+    .social-icons a {
+      width: 2.7vw;
+      height: 2.7vw;
+      padding: 1px;
+      margin-right: 4px;
+      transition: width 0.3s ease, height 0.3s ease;
+    }
+    .social-icons a:not(:last-child) {
+      margin-right: 4px;
+    }
+    .social-icons a:hover {
+      width: 3vw;
+      height: 3vw;
+    }
+    .social-icons a:not(:last-child) {
+      margin-right: 6px;
+    }
+  }
+
   form input {
     text-indent: 3px;
   }

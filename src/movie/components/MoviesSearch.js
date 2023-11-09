@@ -70,9 +70,9 @@ function MovieSearch() {
             onChange={handleInputChange}
           />
         </div>
-        {loading && <Loader /> }
+        {loading && <Loader className={`fade-in ${loading ? 'visible' : ''}`}/> }
         {error && <p>{error}</p>}
-        {query && <div className="search-results movie-grid">
+        {query && <div className="search-results movie-grid" className={`fade-out ${loading ? 'opaque' : ''}`}>
           {movieMap}
         </div>}
       </div>

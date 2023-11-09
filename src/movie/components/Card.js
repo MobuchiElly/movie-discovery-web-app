@@ -34,8 +34,8 @@ function Card() {
         <h1>Popular Movies</h1>
       </div>
       
-      {loading && <Loader /> }
-        <div className="movie-grid"> 
+      {loading && <Loader className={`fade-in ${loading ? 'visible' : ''}`}/> }
+        <div className={`movie-grid fade-out ${loading ? 'opaque' : ''}`}> 
          {!loading && movieList.map((movie) => (
             <Link to={`/movies/${movie.id}`} key={movie.id}>
               <div data-testid="movie-card" className="movie-card">

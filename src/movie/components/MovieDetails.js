@@ -26,12 +26,12 @@ function MovieDetails() {
   if (!movieDetails) {
    
     return (
-      <Loader />
+      <Loader className={`fade-in ${!movieDetails ? 'visible' : ''} `}/>
     )
   }
 
   return (
-    <div className='movie-trailer-card' data-testid="movie-card">
+    <div className={`movie-trailer-card fade-out ${movieDetails ? '' : ''}`} data-testid="movie-card">
       <div className="movie-poster" data-testid="movie-poster">
         <img src={`https://image.tmdb.org/t/p/w185/${movieDetails.poster_path}`} alt={movieDetails.title} width={350} height={400}/>
       </div>

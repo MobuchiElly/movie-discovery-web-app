@@ -15,7 +15,11 @@
 	flex-wrap: nowrap;
 } */
 
-
+/* I would implement dark theme here using this*/
+/* body {
+	background: #141414 !important;
+	color: #ffffff;
+} */
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -68,6 +72,29 @@ body .input input {
   border: 1px solid black !important;
 }
 
+footer input:hover{
+  cursor: pointer;
+  border: 1px solid blueviolet;
+}
+
 .loader {
   height: 100vh;
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 1;
+  transition: opacity 1s ease-in-out;
+}
+
+.fade-out.opaque {
+  opacity: 0;
 }

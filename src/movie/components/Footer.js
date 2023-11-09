@@ -51,7 +51,7 @@ function Footer() {
           
           <div className="col-sm-6">
             
-            <div className="social-icons d-flex justify-content-center">
+            <div className="social-icons d-flex flex-row justify-content-center">
               <a
                 href="https://www.linkedin.com/in/eleazer-ugwu-662211200/"
                 target="_blank"
