@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link} from 'react-router-dom'; // Import Link from react-router-dom
 import Card from './Card';
 import './MoviesSearch.css'
+import Loader from './Loader';
 
 function MovieSearch() {
   const [query, setQuery] = useState('');
@@ -15,7 +16,7 @@ function MovieSearch() {
         setLoading(true);
         setError(null);
 
-        const apiKey = '40da2c9b0397c0ab39d5b5831c254918';
+        const apiKey = process.env.REACT_APP_MY_API_KEY;
 
         const response = await fetch(
           `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${query}`
@@ -45,11 +46,22 @@ function MovieSearch() {
     
     setQuery(e.target.value);
   };
-
+  const movieMap = searchResults.map((movie) => (
+    <Link to={`/movies/${movie.id}`} key={movie.id}>
+      <div className="movie-card">
+        <img
+          src={`https://image.tmdb.org/t/p/w185/${movie.poster_path}`}
+          alt={movie.title} data-testid="movie-poster"
+        />
+        <h2 data-testid="movie-title">{movie.title}</h2>
+        <p data-testid="movie-release-date">Release Date: {movie.release_date}</p>
+      </div>
+    </Link>
+  ))
+  
   return (
     <div className="body">
       <div>
-        <h1>Movie Discovery Application</h1>
         <div className="input">
           <input
             type="text"
@@ -58,21 +70,10 @@ function MovieSearch() {
             onChange={handleInputChange}
           />
         </div>
-        {loading && <p>Loading...</p>}
+        {loading && <Loader /> }
         {error && <p>{error}</p>}
         {query && <div className="search-results movie-grid">
-          {searchResults.map((movie) => (
-            <Link to={`/movies/${movie.id}`} key={movie.id}>
-              <div className="movie-card">
-                <img
-                  src={`https://image.tmdb.org/t/p/w185/${movie.poster_path}`}
-                  alt={movie.title} data-testid="movie-poster"
-                />
-                <h2 data-testid="movie-title">{movie.title}</h2>
-                <p data-testid="movie-release-date">Release Date: {movie.release_date}</p>
-              </div>
-            </Link>
-          ))}
+          {movieMap}
         </div>}
       </div>
       {!query && <Card data-testid="movie-card"/>}

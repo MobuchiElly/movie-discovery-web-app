@@ -1,4 +1,7 @@
-
+* {
+  margin: 0;
+  padding: 0;
+}
 
 
 /* The style below would be reviewed and added for better visual appearance netflix style */
@@ -59,4 +62,12 @@ code {
 .movie-release-date {
   color: rgb(16, 16, 16);
   font-size: 20px;
+}
+
+body .input input {
+  border: 1px solid black !important;
+}
+
+.loader {
+  height: 100vh;
 }

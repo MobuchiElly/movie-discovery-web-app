@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import Loader from './Loader';
 import './MovieDetails.css';
 
 function MovieDetails() {
-  const { id } = useParams(); 
+  const { id } = useParams(); console.log(id); 
   const [movieDetails, setMovieDetails] = useState(null);
 
   useEffect(() => {
     
-    const apiKey = '40da2c9b0397c0ab39d5b5831c254918';
+    const apiKey = process.env.REACT_APP_MY_API_KEY;
     const apiUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`;
 
     fetch(apiUrl)
@@ -23,7 +24,10 @@ function MovieDetails() {
   }, [id]);
 
   if (!movieDetails) {
-    return <h3>Loading...</h3>; 
+   
+    return (
+      <Loader />
+    )
   }
 
   return (

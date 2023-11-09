@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'; 
 import './index.css';
+import Loader from './Loader';
 
 function Card() {
   const [movieList, setMovieList] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const getTopMovies = () => {
-    const apiKey = '40da2c9b0397c0ab39d5b5831c254918';
+    const apiKey = process.env.REACT_APP_MY_API_KEY;
     const fetchUrl = `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}`;
 
     fetch(fetchUrl)
@@ -32,11 +33,10 @@ function Card() {
       <div className='heading'>
         <h1>Popular Movies</h1>
       </div>
-      <div className="movie-grid">
-        {loading ? (
-          <h3>Loading...</h3>
-        ) : (
-          movieList.map((movie) => (
+      
+      {loading && <Loader /> }
+        <div className="movie-grid"> 
+         {!loading && movieList.map((movie) => (
             <Link to={`/movies/${movie.id}`} key={movie.id}>
               <div data-testid="movie-card" className="movie-card">
                 <img
@@ -50,8 +50,9 @@ function Card() {
                 </div>
               </div>
             </Link>
-          ))
-        )}
+          )
+          )
+        }
       </div>
     </div>
   );
