@@ -3,23 +3,6 @@
   padding: 0;
 }
 
-
-/* The style below would be reviewed and added for better visual appearance netflix style */
-/* body {
-	background: #141414;
-	color: #ffffff;
-}
-
-.movie-app > .row {
-	overflow-x: auto;
-	flex-wrap: nowrap;
-} */
-
-/* I would implement dark theme here using this*/
-/* body {
-	background: #141414 !important;
-	color: #ffffff;
-} */
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -30,7 +13,7 @@ code {
 .movie-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid with min-width of 200px */
-  gap: 30px; /* Gap between grid items */
+  gap: 30px;
   margin: 20px;
   padding: 10px;
   margin-bottom: 30px;
@@ -44,6 +27,7 @@ code {
   text-align: center;
   border-radius: 12px;
   height: auto;
+  overflow: hidden;
   min-height: 433px;
 }
 
@@ -54,8 +38,8 @@ code {
 }
 
 .movie-details {
-  margin-top: 9px;
   padding:3px;
+  margin: auto;
 }
 
 .movie-title {

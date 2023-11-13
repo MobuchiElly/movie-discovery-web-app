@@ -8,7 +8,7 @@ function MovieSearch() {
   const [query, setQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState('');
   
   useEffect(() => {
     const searchMovies = async () => {
@@ -29,6 +29,7 @@ function MovieSearch() {
         const data = await response.json();
 
         setSearchResults(data.results);
+        
         setLoading(false);
       } catch (err) {
         setError('An error occurred while fetching search results.');
@@ -71,7 +72,7 @@ function MovieSearch() {
           />
         </div>
         {loading && <Loader className={`fade-in ${loading ? 'visible' : ''}`}/> }
-        {error && <p>{error}</p>}
+        {error && <h4 className='text-center'>{error}</h4>}
         {query && <div className="search-results movie-grid">
           {movieMap}
         </div>}

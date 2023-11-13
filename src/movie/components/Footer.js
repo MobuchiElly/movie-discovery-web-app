@@ -3,31 +3,44 @@ import './Footer.css';
 import { FaLinkedin, FaTwitter, FaGithub, FaLinkedinIn, FaTwitterSquare, FaGithubSquare } from 'react-icons/fa';
 import createTransporter from './Auth/email';
 
-function Footer() {
-  const [input, setInput] = useState('');
-  const [error, setError] = useState(null);
+function Footer({ openModal }) {
+  const [email, setEmail] = useState('');
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
   const [isSubmitted, setIsSubmitted] = useState(false);
 
+  console.log(openModal);
+  
+  const isValidEmail  = (email) => {
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return (emailPattern.test(email));
+  }
+  
   const handleInputChange = (e) => {
-    setInput(e.target.value);
-    setError(null);
+    setEmail(e.target.value);
+    setError('')
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    if (!input) {
+    if (email == '') {
       setError('Please enter your email.');
       return;
     }
 
-    // Your logic for handling the form submission goes here.
-    // For example, you can make an API call or update the state.
-    // For demonstration purposes, let's just log the input to the console.
-    console.log('Email submitted:', input);
-
-    setInput('');
-    setIsSubmitted(true);
+    if (isValidEmail(email)) {
+        console.log('Email submitted:', email);
+        setSuccess('Thank you for subscribing to buchiDevs Movie Discovery App. I would keep you updated on latest movies')
+        openModal('Thank you for subscribing to buchiDevs Movie Discovery App. I would keep you updated on latest movies')
+        setError('');
+        setEmail('');
+        setIsSubmitted(true);
+    }
+    if (!isValidEmail(email)) {
+      setError('Enter a valid email please')
+    }
+    
   };
 
   return (
@@ -39,9 +52,11 @@ function Footer() {
             <form onSubmit={handleSubmit}>
               <h3>Stay in the loop!</h3>
               <h4>Sign up to stay informed on latest movies.</h4>
-              <h4>Enter your email* {error && <div className={`invalid-feedback {error ? 'mr-5' : ''}`}>{error}</div>}</h4>
+              <h4>Enter your email* {error && <div className='text-danger text-sm'>{error}</div>}</h4>
               
-              <input value={input} onChange={handleInputChange} className={`form-control mb-2 mt-2 ${error ? 'is-invalid' : ''}`} placeholder='example@gmail.com'/>
+              {success && <h4>{success}</h4>}
+              
+              <input value={email} onChange={handleInputChange} className={`form-control mb-2 mt-2 ${error ? 'is-invalid' : ''}`} placeholder='example@gmail.com'/>
               <p>By subscribing, you consent to be contacted by Workable about our relevant content, products and events. You can opt-out any time. For more information please see our privacy policy.</p>
               <button type='submit' className='btn btn-primary text-white'>Submit</button>
             </form>

@@ -62,3 +62,7 @@ footer {
   form input {
     text-indent: 3px;
   }
+  form input:active {
+    cursor:text;
+    
+  }
