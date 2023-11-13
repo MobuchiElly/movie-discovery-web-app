@@ -1,4 +1,6 @@
 import React from 'react'
+import { auth } from './Auth/firebase'
+
 
 const Navbar = () => {
   return (

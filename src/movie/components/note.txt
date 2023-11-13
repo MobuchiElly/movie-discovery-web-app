@@ -1,4 +1,51 @@
-Stay in the loop!
-Sign up for jargon-free hiring resources.
-Enter your email*
-By subscribing, you consent to be contacted by Workable about our relevant content, products and events. You can opt-out any time. For more information please see our privacy policy.
+import React, { useState } from 'react';
+import { auth } from './Auth/firebase';
+
+const SubscriptionForm = () => {
+  const [email, setEmail] = useState('');
+  const [subscriptionConfirmed, setSubscriptionConfirmed] = useState(false);
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      // Send sign-in link to the provided email
+      await auth.sendSignInLinkToEmail(email, {
+        url: window.location.href,
+        handleCodeInApp: true,
+      });
+
+      // Save the email to local storage to be accessed later
+      window.localStorage.setItem('emailForSignIn', email);
+
+      // Set state to show confirmation message
+      setSubscriptionConfirmed(true);
+    } catch (error) {
+      console.error('Error sending email link:', error);
+    }
+  };
+
+  return (
+    <div>
+      {!subscriptionConfirmed ? (
+        <form onSubmit={handleSubmit}>
+          <label>Email:</label>
+          <input type="email" value={email} onChange={handleEmailChange} />
+          <button type="submit">Subscribe</button>
+        </form>
+      ) : (
+        <p>Thanks for subscribing! Check your email for the confirmation link.</p>
+      )}
+    </div>
+  );
+};
+
+export default SubscriptionForm;
+
+
+
+'buchiamy?123'

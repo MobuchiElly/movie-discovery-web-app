@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Footer.css';
 import { FaLinkedin, FaTwitter, FaGithub, FaLinkedinIn, FaTwitterSquare, FaGithubSquare } from 'react-icons/fa';
+import createTransporter from './Auth/email';
 
 function Footer() {
   const [input, setInput] = useState('');

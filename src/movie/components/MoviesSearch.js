@@ -72,7 +72,7 @@ function MovieSearch() {
         </div>
         {loading && <Loader className={`fade-in ${loading ? 'visible' : ''}`}/> }
         {error && <p>{error}</p>}
-        {query && <div className="search-results movie-grid" className={`fade-out ${loading ? 'opaque' : ''}`}>
+        {query && <div className="search-results movie-grid">
           {movieMap}
         </div>}
       </div>

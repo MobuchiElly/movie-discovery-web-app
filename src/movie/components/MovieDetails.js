@@ -32,7 +32,7 @@ function MovieDetails() {
 
   return (
     <div className={`movie-trailer-card fade-out ${movieDetails ? '' : ''}`} data-testid="movie-card">
-      <div className="movie-poster" data-testid="movie-poster">
+      <div className="movie-poster"data-testid="movie-poster">
         <img src={`https://image.tmdb.org/t/p/w185/${movieDetails.poster_path}`} alt={movieDetails.title} width={350} height={400}/>
       </div>
       <div className='movie-details'>
