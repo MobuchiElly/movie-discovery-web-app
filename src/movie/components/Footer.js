@@ -45,7 +45,7 @@ function Footer({ openModal }) {
 
   return (
     <div className="container-fluid bg-dark footer text-light shadow-lg">
-      <footer className="row p-4 mt-5">
+      <footer className="row p-4">
       
       <div className="col-sm-6">
           

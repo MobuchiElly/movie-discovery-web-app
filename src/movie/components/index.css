@@ -31,23 +31,23 @@ code {
   min-height: 433px;
 }
 
-.movie-poster {
+.movie-card .movie-poster {
   width: 100%;
   object-fit: cover;
   border-radius: 15px;
 }
 
-.movie-details {
+.movie-card .movie-details {
   padding:3px;
   margin: auto;
 }
 
-.movie-title {
+.movie-card .movie-title {
   font-weight: bold;
   font-size: 23px;
 }
 
-.movie-release-date {
+.movie-card .movie-release-date {
   color: rgb(16, 16, 16);
   font-size: 20px;
 }

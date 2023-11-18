@@ -47,6 +47,7 @@ function MovieSearch() {
     
     setQuery(e.target.value);
   };
+  
   const movieMap = searchResults.map((movie) => (
     <Link to={`/movies/${movie.id}`} key={movie.id}>
       <div className="movie-card">
