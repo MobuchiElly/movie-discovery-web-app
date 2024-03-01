@@ -11,7 +11,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <div className='overflow-x-hidden'>
+    <div className='overflow-x-hidden '>
     <Navbar/>
     <App />
     <Footer />
