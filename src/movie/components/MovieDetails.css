@@ -1,14 +1,30 @@
-/* .movie-trailer-card .movie-details{
-    padding: 0;
-    margin: 0;
-} */
+.movie-trailer-card{
+    background-color: rgb(251, 248, 255);
+}
 .movie-trailer-card .movie-poster img{
     border-radius: 5px;
-    /* width: auto; */
     border: 1px solid rgba(0, 0, 0, 0.693);
 }
-.movie-trailer-card .movie-poster {
-    
+.b-dark{
+    border: 2px solid rgb(216, 199, 199);
+}
+.bg-slate{
+    background-color: rgb(241, 238, 238);
+}
+.shadow {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  }
+.rounded{
+    border-radius: 10px;
+}
+.text-left{
+    text-align: left;
+}
+.text-18px {
+    font-size: 17px;
+}
+.text-20px {
+    font-size: 20px;
 }
 .movie-trailer-card .movie-details {
     height: auto;

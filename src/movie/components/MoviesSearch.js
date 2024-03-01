@@ -51,10 +51,12 @@ function MovieSearch() {
   const movieMap = searchResults.map((movie) => (
     <Link to={`/movies/${movie.id}`} key={movie.id}>
       <div className="movie-card">
-        <img
-          src={`https://image.tmdb.org/t/p/w185/${movie.poster_path}`}
-          alt={movie.title} data-testid="movie-poster"
-        />
+        <div style={{minHeight:'278px'}}>
+          <img
+            src={`https://image.tmdb.org/t/p/w185/${movie.poster_path}`}
+            alt={movie.title} data-testid="movie-poster"
+          />
+        </div>
         <h2 data-testid="movie-title">{movie.title}</h2>
         <p data-testid="movie-release-date">Release Date: {movie.release_date}</p>
       </div>

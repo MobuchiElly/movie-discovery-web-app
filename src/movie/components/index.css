@@ -20,6 +20,7 @@ code {
 }
 
 .movie-card {
+  transition: transform 0.3s ease;
   background-color: rgb(233, 228, 228);
   border: 0.5px solid rgb(17, 16, 16);
   padding: 10px;
@@ -29,6 +30,11 @@ code {
   height: auto;
   overflow: hidden;
   min-height: 433px;
+}
+
+.movie-card:hover {
+  border:'2px solid red';
+  transform: scale(1.1);
 }
 
 .movie-card .movie-poster {
@@ -50,6 +56,7 @@ code {
 .movie-card .movie-release-date {
   color: rgb(16, 16, 16);
   font-size: 20px;
+  text-decoration: none !important;
 }
 
 body .input input {
@@ -57,7 +64,6 @@ body .input input {
 }
 
 footer input:hover{
-  cursor: pointer;
   border: 1px solid blueviolet;
 }
 

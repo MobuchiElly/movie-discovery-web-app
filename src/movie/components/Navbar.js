@@ -1,15 +1,14 @@
 import React from 'react'
-import { auth } from './Auth/firebase'
-
 
 const Navbar = () => {
   return (
-    <nav className='navbar bg-dark text-light shadow-lg'>
-        <div className='container-fluid d-flex justify-content-center'>
-            <h1 className='text-center'>Movie Discovery Application</h1>
+    <nav className='navbar bg-dark text-light shadow-lg p-4'>
+        <div className='container-fluid d-flex flex-column justify-content-center'>
+            <h1 className='text-center w-full fst-italic'>Netsonia</h1>
+            <span className='text-center'>Discover, Indulge and Explore the World of Movies</span>
         </div>
     </nav>
   )
 }
 
-export default Navbar
+export default Navbar;
