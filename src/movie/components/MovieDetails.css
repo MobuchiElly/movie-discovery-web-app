@@ -6,7 +6,9 @@
     border: 1px solid rgba(0, 0, 0, 0.693);
 }
 .b-dark{
-    border: 2px solid rgb(216, 199, 199);
+    border: 1px solid rgb(216, 199, 199);
+    box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
 }
 .bg-slate{
     background-color: rgb(241, 238, 238);
@@ -39,10 +41,3 @@
         width: 100vw;
     }
 }
-
-@media only screen and (min-width: 765px) {
-    /* .lg-screen {
-        width: 50vw !important;
-        background-color: red !important;
-    } */
-  }
