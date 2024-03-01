@@ -30,11 +30,11 @@ function MovieDetails() {
 
   return (
     <div
-      className="d-flex container-fluid h-100 px-4 py-5"
+      className="d-flex justify-content-center align-items-center h-100 px-4 py-5 row"
       style={{ height: "100vh", overflow: "auto" }}
     >
       <div
-        className="container-fluid w-50 p-5 border border-dark my-1 bg-slate rounded shadow"
+        className="col-sm-8 col-md-6 py-4 border border-dark my-1 bg-slate rounded shadow"
         style={{ height: "auto", overflow: "auto" }}
         data-testid="movie-card"
       >

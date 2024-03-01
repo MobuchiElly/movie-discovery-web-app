@@ -39,3 +39,10 @@
         width: 100vw;
     }
 }
+
+@media only screen and (min-width: 765px) {
+    /* .lg-screen {
+        width: 50vw !important;
+        background-color: red !important;
+    } */
+  }
