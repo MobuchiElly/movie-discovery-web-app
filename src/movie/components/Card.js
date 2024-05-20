@@ -14,7 +14,7 @@ function Card() {
     fetch(fetchUrl)
       .then((res) => res.json())
       .then((json) => {
-        const topMovies = json.results.slice(0, 14);
+        const topMovies = json.results.slice(0, 15);
         setMovieList(topMovies);
         setLoading(false);
       })
@@ -40,7 +40,7 @@ function Card() {
       {!loading && (
         <div className={`movie-grid fade-out ${loading ? "opaque" : ""}`}>
           {movieList.map((movie) => (
-            <Link to={`/movies/${movie.id}`} key={movie.id}>
+            <Link to={`/movies/${movie.id}`} key={movie.id} style={{textDecoration:'none'}}>
               <div data-testid="movie-card" className="movie-card">
                 <img
                   className="movie-poster"

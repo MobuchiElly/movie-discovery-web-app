@@ -1,8 +1,16 @@
+.movie-details{
+    min-height: 30vh;
+}
+
 body{
     color: whitesmoke;
 }
 
-
+*{
+    text-decoration: none;
+    padding:0;
+    margin: 0;
+}
 .body h1{
     text-align: center;
 }

@@ -26,8 +26,7 @@ function MovieDetails() {
   if (!movieDetails) {
     return <Loader className={`fade-in ${!movieDetails ? "visible" : ""} `} />;
   }
-  // console.log('moviedetails object: ', movieDetails);
-
+  
   return (
     <div
       className="d-flex justify-content-center align-items-center h-100 px-4 py-5 row"
@@ -50,7 +49,7 @@ function MovieDetails() {
               height={400}
             />
           </div>
-          <div className="overflow-auto m-0">
+          <div className="overflow-auto m-0 movie-details">
             <h2
               className="text-primary m-0 text-center"
               data-testid="movie-title"
@@ -84,7 +83,6 @@ function MovieDetails() {
           </div>
         </div>
       </div>
-      {/* <div className="bg-dark text-white"></div> */}
     </div>
   );
 }

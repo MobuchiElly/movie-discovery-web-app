@@ -49,7 +49,7 @@ function MovieSearch() {
   };
   
   const movieMap = searchResults.map((movie) => (
-    <Link to={`/movies/${movie.id}`} key={movie.id}>
+    <Link to={`/movies/${movie.id}`} key={movie.id} style={{textDecoration:'none'}}>
       <div className="movie-card">
         <div style={{minHeight:'278px'}}>
           <img
@@ -57,8 +57,10 @@ function MovieSearch() {
             alt={movie.title} data-testid="movie-poster"
           />
         </div>
-        <h2 data-testid="movie-title">{movie.title}</h2>
-        <p data-testid="movie-release-date">Release Date: {movie.release_date}</p>
+        <div className='movie-details'>
+          <h2 data-testid="movie-title">{movie.title}</h2>
+          <p data-testid="movie-release-date"className='movie-release-date'>Release Date: {movie.release_date}</p>
+        </div>
       </div>
     </Link>
   ))

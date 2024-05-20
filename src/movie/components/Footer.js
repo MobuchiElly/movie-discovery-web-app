@@ -64,9 +64,8 @@ function Footer() {
               placeholder="example@gmail.com"
             />
             <p>
-              By subscribing, you consent to be contacted by Workable about our
-              relevant content, products and events. You can opt-out any time.
-              For more information please see our privacy policy.
+              By subscribing, you consent to be contacted by Netsonia about our
+              latest movies and shows.
             </p>
             <button type="submit" className="btn btn-primary text-white">
               Submit
